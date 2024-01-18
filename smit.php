@@ -103,10 +103,10 @@
 
 
 $str = "i am smit chavda";
-echo htmlentities($str, ENT_COMPAT); // Will only convert double quotes
+echo htmlentities($str, ENT_COMPAT); 
 echo "<br>";
-echo htmlentities($str, ENT_QUOTES); // Converts double and single quotes
-echo "<br>";
+echo htmlentities($str, ENT_QUOTES); 
+
 echo htmlentities($str, ENT_NOQUOTES); 
 
 
