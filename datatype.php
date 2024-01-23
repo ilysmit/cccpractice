@@ -376,8 +376,8 @@ echo round($d);
 
 // print_r($numbers);
 
-// $numbers = array(4, 6, 2, 22, 11);
-// ksort($numbers);
+$numbers = array(4, 6, 2, 22, 11);
+ksort($numbers);
 
 // print_r($numbers);
 
