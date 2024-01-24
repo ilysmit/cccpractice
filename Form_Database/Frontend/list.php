@@ -45,8 +45,8 @@
                     <td><?php echo $list["pro_status"] ?></td>
                     <td><?php echo $list["pro_create"] ?></td>
                     <td><?php echo $list["pro_update"] ?></td>
-                    <td><a href="">Update</a></td>
-                    <td><a href="">Delete</a></td>
+                    <td><a href="../Frontend/ccc_product_update.php?pro_id= <?php  echo $list["pro_id"]; ?>">Update</a></td>
+                    <td><a href="../Backend/ccc_product_delete.php?pro_id= <?php  echo $list["pro_id"]; ?>">Delete</a></td>
                 </tr>
                 <?php
 
