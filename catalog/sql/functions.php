@@ -1,5 +1,7 @@
 <?php
 
+class query_builder
+{
 function insert($tablename,$data)
 {
     $column = $value = [];
@@ -42,11 +44,15 @@ function delete($tablename,$where)
     return "DELETE FROM {$tablename} WHERE  {$column}";
 }
 
-function select($tablename,$where=null)
+function select($tablename,$where=null,$limit=null)
 {
-    if($where==null)
+    if($where==null && $limit == null)
     {
         return "SELECT * FROM {$tablename}";
+    }
+    if($limit != null)
+    {
+        return "SELECT * FROM {$tablename} ORDER BY pro_id desc LIMIT {$limit}";
     }
     else{
     $column = [];
@@ -57,6 +63,37 @@ function select($tablename,$where=null)
     $column = implode("AND",$column);
     return "SELECT * FROM {$tablename} WHERE {$column}";
 
+    }
+}
+}
+
+class query_execution
+{
+    function execution($sql,$conn)
+    {
+        if(mysqli_query($conn,$sql))
+        {
+            //echo '<script type="text/javascript">alert("Record Inserted")</script>';
+            // return header("Location: ../frontend/product_list.php");
+            return true;
+        }
+        else
+        {
+            // echo "Error: " . $sql . "<br>" . $conn->error;
+            return false;
+        }
+    }
+    function select_execution($sql,$conn)
+    {
+        $data = mysqli_query($conn,$sql);
+        if($data != null)
+        {
+            return $data;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
 ?>

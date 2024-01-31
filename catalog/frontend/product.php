@@ -13,9 +13,12 @@
             if($id >0)
             {   
             $where = array('pro_id'=>$id);
-            $sql = select("tbl_ccc_product",$where);
+            $object_query = new query_builder();
+            $sql = $object_query->select("tbl_ccc_product",$where);
+            $object_execution = new query_execution();
+            $data = $object_execution->select_execution($sql,$conn);
             //echo $sql;
-            $data = mysqli_query($conn,$sql);
+            // $data = mysqli_query($conn,$sql);
             while($record = mysqli_fetch_assoc($data))
             {
         ?>

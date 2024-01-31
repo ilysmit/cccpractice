@@ -11,9 +11,13 @@
             include('../sql/functions.php');
             $id = $_REQUEST['cat_id'];
             $where = array('cat_id'=>$id);
-            $sql = select("ccc_category",$where);
-            //echo $sql;
-            $data = mysqli_query($conn,$sql);
+            $object_query = new query_builder();
+            $sql = $object_query->select("ccc_category",$where);
+            $object_execution = new query_execution();
+            $data = $object_execution->select_execution($sql,$conn);
+            // $sql = select("ccc_category",$where);
+            // //echo $sql;
+            // $data = mysqli_query($conn,$sql);
             while($record = mysqli_fetch_assoc($data))
             {
         ?>

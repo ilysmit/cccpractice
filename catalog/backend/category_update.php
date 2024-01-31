@@ -7,9 +7,13 @@ $data = $_POST['category'];
 //print_r($data);
 $id = array('cat_id'=>$data["cat_id"]);
 //print_r($id);
-$sql = update("ccc_category",$data,$id);
+$object_query = new query_builder();
+$sql = $object_query->update("ccc_category",$data,$id);
+$object_execution = new query_execution();
+$output = $object_execution->execution($sql,$conn);
+// $sql = update("ccc_category",$data,$id);
 //echo $sql;
-if(mysqli_query($conn, $sql)) 
+if($output == true) 
 {
     echo '<script type="text/javascript">alert("Record Updated")</script>';
     return header("Location: ../frontend/category_list.php");

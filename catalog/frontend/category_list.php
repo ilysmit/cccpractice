@@ -15,9 +15,12 @@
         <?php
             include('../sql/connection.php');
             include('../sql/functions.php');
-
-            $sql = select("ccc_category",null);
-            $data = mysqli_query($conn,$sql);
+            $object_query = new query_builder();
+            $sql = $object_query->select("ccc_category",null);
+            $object_execution = new query_execution();
+            $data = $object_execution->select_execution($sql,$conn);
+            // $sql = select("ccc_category",null);
+            // $data = mysqli_query($conn,$sql);
             while($record = mysqli_fetch_assoc($data))
             {?>
                 <tr>
@@ -29,5 +32,6 @@
             }
         ?>
     </table>
+    <!-- <a href="category.php">Add Product</a> -->
 </body>
 </html>
