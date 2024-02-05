@@ -16,7 +16,7 @@
             $object_execution = new query_execution();
             $data = $object_execution->select_execution($sql,$conn);
             // $sql = select("ccc_category",$where);
-            // //echo $sql;
+            // //echo $sql;s
             // $data = mysqli_query($conn,$sql);
             while($record = mysqli_fetch_assoc($data))
             {

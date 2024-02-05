@@ -5,8 +5,8 @@ include('../sql/functions.php');
 
 $data = $_POST['category'];
 //print_r($data);
-
-$sql = insert("ccc_category",$data);
+$obj = new query_builder();
+$sql = $obj->insert("ccc_category",$data);
 
 
 if(mysqli_query($conn,$sql))

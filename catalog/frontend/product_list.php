@@ -15,8 +15,8 @@
             <th>Delete</th>
         </tr>
         <?php
-            include('./sql/connection.php');
-            include('./sql/functions.php');
+            include('../sql/connection.php');
+            include('../sql/functions.php');
             $object_query = new query_builder();
             $sql = $object_query->select("tbl_ccc_product",null,null);
             $object_execution = new query_execution();

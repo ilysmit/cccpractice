@@ -24,7 +24,7 @@
         ?>
         <form name="pro_form" action="../backend/product_update.php" method="post">
         <table>
-            <tr>
+             <tr>
                 
                 <td><input type="hidden" name="product[pro_id]" id="pro_id" value="<?php echo $record["pro_id"]?>" required/></td>
             </tr>
