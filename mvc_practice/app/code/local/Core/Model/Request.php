@@ -34,7 +34,7 @@ class Core_Model_Request
         return ucfirst($model)."_Controller_".ucfirst($controller);
     }
     public function getParams($key = '') {
-		return ($key == '')
+			return ($key == '')
 			? $_REQUEST
 			: (isset($_REQUEST[$key])
 				? $_REQUEST[$key]

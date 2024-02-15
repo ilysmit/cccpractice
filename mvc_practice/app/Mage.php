@@ -14,7 +14,7 @@ class Mage
     {
         $uriArray = explode("/", $modelName);
         $className = ucfirst($uriArray[0])."_"."Model"."_".ucfirst($uriArray[1]);
-        return new $className;
+        return $className;
     }
 
     public static function getBlock($blockName)
