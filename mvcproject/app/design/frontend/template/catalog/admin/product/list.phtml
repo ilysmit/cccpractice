@@ -1,0 +1,70 @@
+list phtml content
+<!-- <pre> -->
+<?php
+$productCollection = Mage::getModel('catalog/product')->getCollection()
+    // ->addFieldToFilter('product_name','bet')
+    // ->addFieldToFilter('product_name',['like' => 'bet'])
+    // ->addFieldToFilter('product_name',['gt' => 'bet'])
+    // ->addFieldToFilter('product_name',['in' => 'bet'])
+    // ->addFieldToFilter('product_name',['between' => 'bet'])
+    ;
+// foreach($productCollection->getData() as $product) {
+    // var_dump($product->getStatus());
+    // echo($product);
+// }
+// echo get_class($productCollection); 
+?>
+
+
+<div class="table" style="margin-top:20px;">
+    <table border="2px solid black">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>SKU</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Manufacturer Cost</th>
+            <th>Shipping Cost</th>
+            <th>Total cost</th>
+            <th>Price</th>
+            <th>Status</th>
+        </tr>
+<?php foreach($productCollection->getData() as $product) :?>
+        <tr>
+            <td>
+                <?php echo $product->getId();?>
+            </td>   
+            <td>
+                <?php echo $product->getproduct_name();?>
+            </td>
+            <td>
+                <?php echo $product->getsku();?>
+            </td>
+            <td>
+                <?php echo $product->getproduct_type();?>
+            </td>
+            <td>
+                <?php echo $product->getcategory();?>
+            </td>
+            <td>
+                <?php echo $product->getmanufacturer_cost();?>
+            </td>
+            <td>
+                <?php echo $product->getshipping_cost();?>
+            </td>
+            <td>
+                <?php echo $product->gettotal_cost();?>
+            </td>
+            <td>
+                <?php echo $product->getprice();?>
+            </td>
+            <td>
+                <?php echo $product->getStatus();?>
+            </td>
+           
+           
+        </tr>
+        <?php endforeach?>
+    </table>
+</div>
